@@ -19,7 +19,7 @@ echo "  scripts_dir: $scripts_dir"
 echo "  file_loc: $file_loc"
 
 # export
-export LINT_XML_OUTPUT=${file_loc}.xml
+export LINT_XML_OUTPUT=${file_loc}
 
 # ステップのリポジトリをクローンする
 echo "Prepare Scripts file, with Git Clone. Dir: $scripts_dir"
