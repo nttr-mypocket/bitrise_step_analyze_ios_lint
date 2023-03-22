@@ -29,7 +29,7 @@ end
 logger = Logger.new($stderr)
 
 # Lintの出力ファイルを取得する
-xml_file = ENV["LINT_XML_OUTPUT"]
+xml_file = ENV["swift_lint_report"]
 logger.info("INPUT XML: #{xml_file}")
 
 # エラーの種類ごとにカウントするための変数を初期化する

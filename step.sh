@@ -18,9 +18,6 @@ file_loc=$swift_lint_report
 echo "  scripts_dir: $scripts_dir"
 echo "  file_loc: $file_loc"
 
-# export
-export LINT_XML_OUTPUT=${file_loc}
-
 # ステップのリポジトリをクローンする
 echo "Prepare Scripts file, with Git Clone. Dir: $scripts_dir"
 if [ -d "$scripts_dir" ]; then
@@ -32,7 +29,7 @@ fi
 echo "Prepared Scripts file."
 
 # 環境変数を設定する
-envman add --key LINT_XML_OUTPUT --value ${LINT_XML_OUTPUT}
+envman add --key LINT_XML_OUTPUT --value ${file_loc}
 
 # rubyを実行する
 ruby ./${scripts_dir}/ruby/ios-lint.rb
