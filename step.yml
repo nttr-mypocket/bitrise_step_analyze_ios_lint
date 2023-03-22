@@ -1,0 +1,60 @@
+title: |-
+  Bitrise step analyze ios lint
+summary: |
+  Bitrise step analyze ios lint
+description: |
+  Bitrise step analyze ios lint
+website: https://github.com/nttr-mypocket/bitrise_step_analyze_ios_lint
+source_code_url: https://github.com/nttr-mypocket/bitrise_step_analyze_ios_lint
+support_url: https://github.com/nttr-mypocket/bitrise_step_analyze_ios_lint/issues
+project_type_tags:
+ - ios
+type_tags:
+  - utility
+is_requires_admin_user: false
+is_always_run: false
+is_skippable: false
+deps:
+  brew:
+    - name: ruby
+  apt_get:
+    - name: ruby
+toolkit:
+  bash:
+    entry_file: step.sh
+inputs:
+  - step_repository_url: https://github.com/nttr-mypocket/bitrise_step_analyze_ios_lint.git
+    opts:
+      category: Script Configuration
+      title: "Step Repository URL"
+      description: "Step Repository URL"
+      is_required: true
+  - step_clone_dir_branch: step-folder
+    opts:
+      category: Script Configuration
+      title: "Step Clone Directory"
+      description: "Step Clone Directory"
+      is_required: true
+  - step_branch: main
+    opts:
+      category: Script Configuration
+      title: "Step Branch"
+      description: "Step Branch"
+      is_required: true
+outputs:
+  - LINT_XML_OUTPUT:
+    opts:
+      title: "Lint xml result location"
+      description: "Generates path for XML file"
+  - LINT_OUTPUT_ERROR:
+    opts:
+      title: "Lint errors count"
+      description: "Saves count of Errors from lint result in variable"
+  - LINT_OUTPUT_OTHERS:
+    opts:
+      title: "Lint info count"
+      description: "Saves count of Others from lint result in variable"
+  - LINT_OUTPUT_WARNING:
+    opts:
+      title: "Lint warning count"
+      description: "Saves count of Warnings from lint result in variable"
