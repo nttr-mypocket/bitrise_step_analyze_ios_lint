@@ -81,14 +81,14 @@ end
 print_error_counts(logger, error_count, warning_count, other_count)
 
 # エラーの数を環境変数に設定する
-system( "envman add --key LINT_OUTPUT_ERROR --value #{error_count}" )
-system( "envman add --key LINT_OUTPUT_WARNING --value #{warning_count}" )
-system( "envman add --key LINT_OUTPUT_OTHERS --value #{other_count}" )
+system("envman add --key LINT_OUTPUT_ERROR --value #{error_count}")
+system("envman add --key LINT_OUTPUT_WARNING --value #{warning_count}")
+system("envman add --key LINT_OUTPUT_OTHERS --value #{other_count}")
 
-system( "envman add --key LINT_XML_OUTPUT --value #{xml_file}" )
+system("envman add --key LINT_XML_OUTPUT --value #{xml_file}")
 
 # エラーの数に応じて終了コードを設定する
 if error_count.positive?
   logger.error("Critical error count : #{error_count}")
   exit(2)
- end
+end

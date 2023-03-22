@@ -13,7 +13,7 @@ echo "  step_branch: $step_branch"
 
 echo "Generate Enviroments"
 scripts_dir=$step_clone_dir_branch
-file_loc=$SWIFTLINT_REPORT_PATH
+file_loc=$swift_lint_report
 
 echo "  scripts_dir: $scripts_dir"
 echo "  file_loc: $file_loc"

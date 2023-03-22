@@ -23,6 +23,11 @@ toolkit:
   bash:
     entry_file: step.sh
 inputs:
+  - swift_lint_report: $SWIFTLINT_REPORT_PATH
+    opts:
+      title: "Swift Lint Report Path"
+      description: "[MUST] Checkstyle report. \"reporter is checkstyle\""
+      is_required: true
   - step_repository_url: https://github.com/nttr-mypocket/bitrise_step_analyze_ios_lint.git
     opts:
       category: Script Configuration
