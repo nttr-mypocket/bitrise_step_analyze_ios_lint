@@ -1,7 +1,7 @@
 # Copyright © 2023 NTT Resonant Technology Inc. All Rights Reserved.
 
 title: |-
-  Bitrise step Analyze iOS SwiftLint
+  Analyze iOS SwiftLint
 summary: |
   Bitrise step Analyze iOS SwiftLint
 description: |
