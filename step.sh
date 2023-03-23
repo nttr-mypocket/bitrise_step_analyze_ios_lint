@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# Copyright © 2023 NTT Resonant Technology Inc. All Rights Reserved.
+
 set -ex
 set +x
 set +v

@@ -1,3 +1,5 @@
+# Copyright © 2023 NTT Resonant Technology Inc. All Rights Reserved.
+
 # frozen_string_literal: true
 
 require 'rexml/document'
