@@ -1,11 +1,11 @@
 # Copyright © 2023 NTT Resonant Technology Inc. All Rights Reserved.
 
 title: |-
-  Bitrise step analyze ios lint
+  Bitrise step Analyze iOS SwiftLint
 summary: |
-  Bitrise step analyze ios lint
+  Bitrise step Analyze iOS SwiftLint
 description: |
-  Bitrise step analyze ios lint
+  Bitrise step Analyze iOS SwiftLint
 website: https://github.com/nttr-mypocket/bitrise_step_analyze_ios_lint
 source_code_url: https://github.com/nttr-mypocket/bitrise_step_analyze_ios_lint
 support_url: https://github.com/nttr-mypocket/bitrise_step_analyze_ios_lint/issues

@@ -35,6 +35,6 @@ echo "Prepared Scripts file."
 envman add --key LINT_XML_OUTPUT --value ${file_loc}
 
 # rubyを実行する
-ruby ./${scripts_dir}/ruby/ios-lint.rb
+ruby ./${scripts_dir}/ruby/ios_lint.rb
 
 echo "Complete Lint Analyze"
