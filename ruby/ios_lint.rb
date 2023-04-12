@@ -22,16 +22,16 @@ ErrorData = Struct.new(
 
 # エラーのカウントを出力する関数
 def print_error_counts(logger, error_count, warning_count, other_count)
-  logger.info("error count: #{error_count}")
-  logger.info("warning count: #{warning_count}")
-  logger.info("other count: #{other_count}")
+  logger.info("error count : #{error_count}")
+  logger.info("warning count : #{warning_count}")
+  logger.info("other count : #{other_count}")
 end
 
 # ロガーを設定する
 logger = Logger.new($stderr)
 
 # Lintの出力ファイルを取得する
-xml_file = ENV["swift_lint_report"]
+xml_file = ENV["LINT_XML_OUTPUT"]
 logger.info("INPUT XML: #{xml_file}")
 
 # エラーの種類ごとにカウントするための変数を初期化する
@@ -76,7 +76,7 @@ begin
     logger.info("converted : #{file_issue}")
   end
 rescue StandardError => e
-  logger.error("Failed to open XML file: #{xml_file}; error: #{e.message}")
+  logger.error("Failed to open XML file : #{xml_file}; error : #{e.message}")
   exit(1)
 end
 
@@ -87,10 +87,14 @@ system("envman add --key LINT_OUTPUT_ERROR --value #{error_count}")
 system("envman add --key LINT_OUTPUT_WARNING --value #{warning_count}")
 system("envman add --key LINT_OUTPUT_OTHERS --value #{other_count}")
 
-system("envman add --key LINT_XML_OUTPUT --value #{xml_file}")
-
 # エラーの数に応じて終了コードを設定する
-if error_count.positive?
+if error_count.positive? && ENV["fail_on_error"] == "yes"
   logger.error("Critical error count : #{error_count}")
+  logger.info("Throwing error in order to fail the build.")
   exit(2)
+elsif error_count.positive?
+  logger.info("Critical error count : #{error_count}")
+  logger.info("Keeping the build alive.")
+else
+  logger.info("No error has been found.")
 end
